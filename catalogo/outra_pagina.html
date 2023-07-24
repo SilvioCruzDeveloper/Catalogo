@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bem-vindo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div id="welcomeMessage">
+      <h1 id="welcomeText"></h1>
+      <main>
+        <p class="info">
+          Fique à vontade para entrar em <br />
+          contato ou conhecer um de nossos produtos
+        </p>
+        <div class="buttons">
+          <a class="whatsapp-button" href="https://wa.me/5591984488375" target="_blank">WhatsApp</a>
+          <a class="products-button" href="pagina_produtos.html">Conheça nossos produtos</a>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script>
+    // Função para obter o valor de um parâmetro na URL
+    function getParameterByName(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      const welcomeText = document.getElementById("welcomeText");
+      const userName = getParameterByName("nome");
+      if (userName) {
+        welcomeText.textContent = `Seja bem-vindo, ${decodeURIComponent(userName)}!`;
+        document.getElementById("welcomeMessage").style.display = "block";
+      } else {
+        window.location.href = "index.html";
+      }
+    });
+  </script>
+</body>
+</html>

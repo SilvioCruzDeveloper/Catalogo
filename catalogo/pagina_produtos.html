@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo de Produtos</title>
+    <link rel="stylesheet" href="stylecatalago.css">
+    
+  </head>
+  <body>
+    <h1>Catálogo de Produtos</h1>
+
+    <div class="product-button" onclick="openWhatsApp('Lift Detox Black')">
+      <div class="bordas">
+        <div class="product-item">
+          <img
+            class="product-image"
+            src="https://nutrividafit.com.br/cdn/shop/files/Lift-Pagina-Nova_2-transformed_800x.png?v=1686067492"
+            alt="Lift Detox Black"
+          />
+          <h2>Lift Detox Black</h2>
+        </div>
+        <p></p>
+        <p>
+          UM PRODUTO PERFEITO PARA AUXILIAR NO SEU EMAGRECIMENTO <br />
+          NESSE ANO!
+        </p>
+      </div>
+    </div>
+    <div class="product-button" onclick="openWhatsApp('Rosa Amazonica')">
+      <div class="bordas">
+        <div class="product-item">
+          <img
+            class="product-image"
+            src="https://colectexclusivos.com/wp-content/uploads/2023/06/frasco-1024.png"
+          />
+
+          <h2>Rosa Amazonica</h2>
+
+          <br />
+        </div>
+        <p>
+          Um produto rico em vitaminas que traz maciez, firmeza,
+          rejuvenescimento e hidratação profunda!
+        </p>
+      </div>
+    </div>
+
+    <div class="product-button" onclick="openWhatsApp('Curcumy')">
+      <div class="bordas">
+        <div class="product-item">
+          <img
+            class="product-image"
+            src="https://curcumy.net.br/wp-content/uploads/2023/03/imagem2.png"
+            alt="Curcumy"
+          />
+          <h2>Curcumy</h2>
+        </div>
+        <div>
+          <p>
+            FÓRMULA AVANÇADA PARA O COMBATE DAS DORES ARTICULARES E DO CORPO
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function openWhatsApp(productName) {
+        var message = encodeURIComponent(
+          "Olá, quero saber mais sobre o produto " + productName
+        );
+        var whatsappLink =
+          "https://api.whatsapp.com/send?phone=SEUNUMERODOTELEFONE&text=" +
+          message;
+        window.open(whatsappLink);
+      }
+    </script>
+  </body>
+</html>
