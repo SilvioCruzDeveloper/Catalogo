@@ -1,34 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bem-vindo</title>
-  <link rel="stylesheet" href="stylewc.css">
-</head>
-<body>
-  <main>
-      <div class="container">
-        <div id="nameInput">
-          <label for="name">Digite seu nome</label>
-          <input type="text" id="name" />
-          <button onclick="showWelcomeMessage()">Enviar</button>
-        </div>
-        <div id="welcomeMessage" style="display: none;">
-          <h1 id="welcomeText"></h1>
-          <main>
-            <p class="info">
-              Fique à vontade para entrar em <br />
-              contato ou conhecer um de nossos produtos
-            </p>
-            <div class="buttons">
-              <a class="whatsapp-button" href="https://api.whatsapp.com/send?phone=SEUNUMERODOTELEFONE" target="_blank">WhatsApp</a>
-              <a class="products-button" href="pagina_produtos.html">Conheça nossos produtos</a>
-            </div>
-          </main>
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecionamento</title>
+    <link rel="stylesheet" href="stylered.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+      }
+
+      .message {
+        margin-top: 20px;
+        font-size: 18px;
+        color: #3a86ff;
+      }
+
+      @media only screen and (max-width: 600px) {
+        /* Estilos adicionais para dispositivos móveis */
+
+        .message {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="loading">
+      <div class="message">
+        <p>Esta tudo bem?...</p>
+
+        <p>Por favor, aguarde alguns segundos...</p>
       </div>
-      <script src="script.js"></script>
-  </main>
-</body>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Pixel do Facebook -->
+    <script>
+      // Código do pixel do Facebook
+      // Substitua 'SEU_PIXEL_ID' pelo ID do pixel do Facebook
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+      );
+      fbq("init", "SEU_PIXEL_ID");
+      fbq("track", "PageView");
+    </script>
+
+    <!-- Redirecionamento -->
+    <script>
+      setTimeout(function () {
+        window.location.href = "logim.html";
+      }, 5000); // 5000ms = 5 segundos (tempo de espera antes do redirecionamento)
+    </script>
+  </body>
 </html>
