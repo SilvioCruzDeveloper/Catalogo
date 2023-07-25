@@ -37,10 +37,12 @@ h1 {
   padding: 20px;
   margin: 20px;
   margin: 5px;
+ 
 }
 .bordas:hover{
   border-radius: 6px;
   text-decoration: underline;
+  box-shadow: -1px 1px 15px 1px rgba(0, 0, 0, 0.288);
 }
 p {
   font-size: 20px;
